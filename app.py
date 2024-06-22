@@ -1,7 +1,7 @@
 from theetl.etl import ETL
 
 def main():
-    etl_instance = ETL('config/etl-example.yaml')
+    etl_instance = ETL('config/etl-example.yaml',"example2")
     
     # Ejecutando la función de extracción si está disponible
     if etl_instance.extraction:

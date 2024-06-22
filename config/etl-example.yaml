@@ -1,10 +1,19 @@
-name: example
+- name: example
+  extraction: etl.extraction.avro.load_avro
+  transformations:
+    - etl.transformation.processing.process_data
+  filters:
+    - etl.filters.filters.unique_ids
+  loads:
+    - etl.load.big_query.big_query
+    - etl.load.pub_sub.pub_sub
 
-extraction: etl.extraction.avro.load_avro
-transformations: 
-  - etl.transformation.processing.process_data
-filters:
-  - etl.filters.filters.unique_ids
-loads:
-  - etl.load.big_query.big_query
-  - etl.load.pub_sub.pub_sub
+- name: example2
+  extraction: etl.extraction.avro.load_avro
+  transformations:
+    - etl.transformation.processing.process_data_v2
+  filters:
+    - etl.filters.filters.unique_ids
+  loads:
+    - etl.load.big_query.big_query_v2
+    - etl.load.pub_sub.pub_sub_v2
