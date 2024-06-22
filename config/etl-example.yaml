@@ -1,0 +1,10 @@
+name: example
+
+extraction: etl.extraction.avro.load_avro
+transformations: 
+  - etl.transformation.processing.process_data
+filters:
+  - etl.filters.filters.unique_ids
+loads:
+  - etl.load.big_query.big_query
+  - etl.load.pub_sub.pub_sub
